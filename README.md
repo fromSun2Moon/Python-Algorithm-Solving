@@ -13,6 +13,7 @@
 
 ### Baekjoon study
 
+[![Solved.ac 프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=lime12)](https://solved.ac/lime12)  
 ![언어 - Python](https://img.shields.io/badge/Python-14354C?style=for-the-badge&logo=python&logoColor=white)
 ![에디터 - VSCode](https://img.shields.io/badge/Visual_Studio_Code-0078D4?style=for-the-badge&logo=visual%20studio%20code&logoColor=white)
 ![OS -우분투](https://img.shields.io/badge/Ubuntu-E95420?style=for-the-badge&logo=ubuntu&logoColor=white)
