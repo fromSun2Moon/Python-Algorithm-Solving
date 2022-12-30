@@ -1,0 +1,39 @@
+## 문제 이름
+- 우박수열정적분
+
+## 풀이
+- get_area : x range와 높이 좌표를 받아 넓이를 계산한다. 이 때, 너비 1 씩 계산하여 합한다.
+- collatz : 로타르 콜라츠의 추측을 계산한다.
+- solution : 입력(ranges)따라 면적을 반환하여 최종 정적분 집합 answer를 반환한다. 
+
+## 소스코드
+```py
+def get_area(x1, x2, inds):
+    area=0
+    for i in range(x1, x2):
+        x, y = inds[i]; a,b = inds[i+1]
+        if b >= y: area += (y + (b-y)/2)
+        else: area+= (b+(y-b)/2)
+    return area
+
+def collatz(k):
+    cnt=0; loc=[(cnt,k)]
+    while k > 1:
+        if k % 2 ==0:
+            cnt+=1; k=k//2; loc.append((cnt,k))
+        else:
+            cnt+=1; k=3*k+1; loc.append((cnt,k))
+    return loc
+
+def solution(k, ranges):
+    answer=[]
+    inds = collatz(k); len_i = len(inds)-1
+    for rang in ranges:
+        x1, x2 = rang; x2 = len_i + x2
+        if x1 == x2 and x1 != 0 and x2!=0: answer.append(0.)
+        elif x2 < x1: answer.append(-1.) 
+        else:
+            answer.append(get_area(x1, x2, inds))
+    return answer
+
+```
